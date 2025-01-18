@@ -1,0 +1,6 @@
+public class Rook extends Schachbrett{
+       public static void mkColors(int i, int j){
+         }
+       public static void dltColors(int x, int y){
+         }
+  }

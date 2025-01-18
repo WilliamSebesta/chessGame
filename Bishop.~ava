@@ -1,0 +1,41 @@
+public class Bishop extends Schachbrett{
+       public static void mkColors(int i, int j){
+              for (int x = 1;x<8 ;x++ ) {
+                  if (i+x >= 0 && i+x <= 7 && j+x >= 0 && j+x <= 7) {
+                    button[i+x][j+x].setBackground(new java.awt.Color(153,255,153)); 
+                    greenbg[i+x][j+x] = true;
+                    if(!bild[i+x][j+x].equals("")){
+                      break;
+                      }
+                   } // end of if
+                } // end of for
+                for (int x=1;x<8 ;x++ ) {
+                    if (i+x >= 0 && i+x <= 7 && j-x >= 0 && j-x <= 7) {
+                    button[i+x][j-x].setBackground(new java.awt.Color(153,255,153)); 
+                    greenbg[i+x][j-x] = true;
+                    if (!bild[i+x][j-x].equals("")) {
+                       break;  
+                    } // end of if
+                   } // end of if 
+                } // end of for
+                for (int x=1;x<8 ;x++ ) {
+                    if (i-x >= 0 && i-x <= 7 && j-x >= 0 && j-x <= 7) {
+                    button[i-x][j-x].setBackground(new java.awt.Color(153,255,153));
+                    greenbg[i-x][j-x] = true;
+                    if (!bild[i-x][j-x].equals("")) {
+                       break;  
+                    } // end of if 
+                   } // end of if  
+                } // end of for
+                for (int x=1;x<8 ;x++ ) {
+                    if (i-x >= 0 && i-x <= 7 && j+x >= 0 && j+x <= 7) {
+                    button[i-x][j+x].setBackground(new java.awt.Color(153,255,153));
+                    greenbg[i-x][j+x] = true;
+                    if(!bild[i-x][j+x].equals("")){ 
+                        break; 
+                   } // end of if 
+                   
+                   } // end of if  
+                } // end of for    
+         }
+  }
