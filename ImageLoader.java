@@ -7,14 +7,14 @@
         Icon icon;
         public ImageLoader(int x, int y){
                try {
-                   icon = new ImageIcon("pieces/" + bild[x][y] + ".png");    
+                   icon = new ImageIcon(bild[x][y] + ".png");    
                } catch(Exception e) {
                   e.printStackTrace();
                } 
           }
         public ImageLoader(String figure){
                try {
-                   icon = new ImageIcon("pieces/" + figure + ".png");    
+                   icon = new ImageIcon(figure + ".png");    
                } catch(Exception e) {
                   e.printStackTrace();
                } 
