@@ -34,6 +34,37 @@ public class Knight extends Schachbrett{
                 } // end of if
          }
        public static void dltColors(int x, int y){
-              
+              if (y-2>=0 && y-2<=7 && x+1>=0 && x+1 <=7) {
+                 standardbgcolor(x+1,y-2,"");
+                 greenbg[x+1][y-2]=false;  
+              } // end of if
+              if (y-1>=0 && y-1<=7 && x+2>=0 && x+2 <=7) {
+                 standardbgcolor(x+2,y-1,"");
+                 greenbg[x+2][y-1]=false; 
+              }
+              if (y+1>=0 && y+1<=7 && x+2>=0 && x+2 <=7) {
+                 standardbgcolor(x+2,y+1,"");
+                 greenbg[x+2][y+1]=false;  
+              } 
+              if (y+2>=0 && y+2<=7 && x+1>=0 && x+1 <=7) {
+                 standardbgcolor(x+1,y+2,"");
+                 greenbg[x+1][y+2]=false;  
+              } // end of if
+              if (y+2>=0 && y+2<=7 && x-1>=0 && x-1 <=7) {
+                 standardbgcolor(x-1,y+2,"");
+                 greenbg[x-1][y+2]=false;  
+              } // end of if
+              if (y+1>=0 && y+1<=7 && x-2>=0 && x-2 <=7) {
+                 standardbgcolor(x-2,y+1,"");
+                 greenbg[x-2][y+1]=false;  
+              } // end of if
+              if (y-1>=0 && y-1<=7 && x-2>=0 && x-2 <=7) {
+                 standardbgcolor(x-2,y-1,"");
+                 greenbg[x-2][y-1]= false;  
+              } // end of if
+              if (y-2>=0 && y-2<=7 && x-1>=0 && x-1 <=7) {
+                 standardbgcolor(x-1,y-2,"");
+                 greenbg[x-1][y-2]= false;  
+              } // end of if         
          }
   }
