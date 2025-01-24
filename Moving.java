@@ -41,11 +41,12 @@ public class Moving extends Schachbrett{
   
        public static void changeIcons(int lastx,int lasty, String lastbild, int i, int j){
               if (lfColor.equals("black")) {
-                 lfColor = "white";  
+                 lfColor = "white";             //new player can make a move
               } // end of if
               else {
                 lfColor = "black";
               } // end of if-else
+              
               ImageLoader image = new ImageLoader(lastbild);
               button[i][j].setIcon(image.icon);
               button[lastx][lasty].setIcon(null);
@@ -59,6 +60,16 @@ public class Moving extends Schachbrett{
               } // end of if
               bild[lastx][lasty] = "";
               bild[i][j] = lastbild;
+              if (bild[i][j].equals("black_pawn") && j == 7) {
+                 ImageLoader queen = new ImageLoader("black_" + randomFigure());
+                 button[i][j].setIcon(queen.icon);
+                 bild[i][j] = "black_queen";     
+              } // end of if
+              else if (bild[i][j].equals("white_pawn") && j == 0) {
+                 ImageLoader queen = new ImageLoader("white_"+randomFigure());
+                 button[i][j].setIcon(queen.icon); 
+                 bild[i][j] = "white_queen"; 
+              }
               standardbgcolor(lastx, lasty, lastbild);     
          }
        public static void kingalive (int i, int j){
@@ -75,5 +86,19 @@ public class Moving extends Schachbrett{
               JOptionPane.showMessageDialog(null, color + " has won");
               ImageIcon icon = new ImageIcon("bild.jpg");
               JOptionPane.showMessageDialog(null, "Spiel zu ende", "Meldung", JOptionPane.INFORMATION_MESSAGE, icon);
-         }          
+         }    
+  
+  public static String randomFigure(){                 //Bauer gelangt ans Ende und verwandelt sich zufällig in eine der 4 Figuren
+         int randint = (int) (Math.random()*4);
+         if(randint == 0){
+              return "knight";
+           }
+         else if (randint == 1) {
+              return "bishop";  
+         }
+         else if (randint == 3) {
+              return "rook";  
+         }
+         return "queen";
+    }             
 }
